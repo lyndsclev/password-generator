@@ -54,11 +54,42 @@ function generatePassword () {
   var charTypesConfirmed = []
 
   if (confirmNum) {
-
+    charTypesConfirmed = charTypesConfirmed.concat(num)
   }
 
+  if (confirmSpecial) {
+    charTypesConfirmed = charTypesConfirmed.concat(special);
+  }
+
+  if (confirmLower) {
+    charTypesConfirmed = charTypesConfirmed.concat(lower);
+  }
+
+  if (confirmUpper) {
+    charTypesConfirmed = charTypesConfirmed.concat(upper);
+  }
+
+  // Console log to check the array for confirmed character types is working 
+
+  console.log(charTypesConfirmed);
 
   // Loop (for) through true character types array to pull a number the same length as the user selected 
+
+  // Declare variable to be populated by result of for loop pulling from charTypesConfirmed array 
+ 
+  var pass = ""; 
+
+  for (var i = 0; i < length; i++) {
+    pass = pass + charTypesConfirmed[Math.floor(Math.random() * charTypesConfirmed.length)];
+
+    // Console log to see how it's working
+
+    console.log(password);
+  }
+
+  // Return password 
+
+  return pass; 
 
 }
 
